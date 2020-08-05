@@ -1,2 +1,2 @@
 # Descripcion
-En esta acrpeta iran los talleres
+En esta carpeta iran los talleres
