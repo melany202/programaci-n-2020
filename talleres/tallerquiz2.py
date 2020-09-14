@@ -23,6 +23,9 @@ mensajeEntradaNoValidaT ='Recuerde ingresar una opcion valida F,K,C'
 mensajeOpcion = 'Usted escogio la opcion {}'
 mensajeSalida ='Gracias por usar el programa'
 mensajeCelsius ='No es necesario la conversión, pero se muestra la lista'
+mensajeMaxima ='La temperatura maxima es'
+mensajeMinima ='La temperatura minima fue'
+mensajefrecuencia ='La temperatura fue tomada con una frecuencia de'
 
 
 
@@ -88,9 +91,9 @@ while (opcion != 4) :
         print(ListaEstadosSalud)
     elif(opcion ==3):
         print(mensajeOpcion.format(3))
-        print('La temperatura maxima fue',mayor)
-        print('La temperatura minima fue',menor)
-        print('La temperatura fue tomada con una frecuencia de' ,frecuencia)
+        print(mensajeMaxima,mayor)
+        print(mensajeMinima,menor)
+        print(mensajefrecuencia,frecuencia)
     else:
         print(mensajeEntradaNoValidaN)
 
