@@ -46,15 +46,15 @@ for elemento in listaDolar:
 
 #---diviendo ingresos mensuales---#
 for elemento in listaDolar:
-    ingreso=''
+    ingreso =''
     if(elemento < 1000):
-        print('Ingresos bajos')
+        ingreso ='Ingresos bajos'
     elif(elemento >= 1000 and elemento < 7000):
-        print('Ingresos medios')
+        ingreso ='Ingresos medios'
     elif(elemento>= 7000 and elemento < 20000):
-        print('Ingresos altos')
+        ingreso ='Ingresos altos'
     else:
-        print('Ingresos elevados')
+        ingreso ='Ingresos elevados'
     listaingresos.append(ingreso)
 
 #---Calculae maximo,minimo y promedio---#
@@ -76,6 +76,7 @@ while(opcion != 4):
         if(conversion =='C'):
             print(listaColombianos)
         elif(conversion == 'D'):
+            print(mensajeDolares)
             print(listaDolar)
         elif(conversion == 'E'):
             print(listaEuros)

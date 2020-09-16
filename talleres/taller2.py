@@ -40,26 +40,18 @@ while(numeroingresadoA<numeroingresadoB):
 #Ejercicio while 4
 print("---ejercicio4---")
 
-preguntaMonto="Por favor ingrese el monto de compra : "
-preguntaMonto2="Por favor ingrese el siguiente monto o ponga 0 para finalizar : "
-monto1 = float(input(preguntaMonto))
-suma = 0
-mensajeError ="ingrese por favor un monto positivo : "
+total= 0
+monto=float(input('Monto de una venta : '))
+while (monto!=0):
+    if (monto <0):
+        print('Monto no valido')
+    else:
+        total=+monto
+    monto=float(input('Monto de una venta :'))
+if (total>1000):
+    total -=total*0.1
+print('Monto total a pagar : $',total)
 
-while( monto1 <0):
-    monto1=float(input(mensajeError))
-
-while(monto1!= 0 ):
-    suma += monto1
-    monto2=float(input(preguntaMonto2))
-    monto1 = monto2
-
-
-if(suma>1000) :
-    suma = suma-(suma*0.1)
-    print(f"el valor que debes pagar con el descuento es {suma}")
-
-print(suma)
 
 
 

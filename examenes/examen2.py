@@ -1,13 +1,13 @@
-#ENTRADAS
-listaDolares=[20000,30000,4000,2500,1000,7600]
+listaPesos=[20000,30000,4000,2500,1000,7600]
 
 #preguntas
 preguntaMenu ='''
 por favor ingrese una de estas opciones
             1-Convertir el dinero
-            2-división de los ingresos mensuales
-            3-ver ingreso mas alto, mas bajo y promedio
-            4-para salir 
+            2-Agregar un nuevo valor a la lista
+            3-Mostrar el ingreso mas alto,mas bajo y promedio 
+            4-Eliminar un elemento de la lista
+            5-Salir del programa  
 :'''
 preguntaConversionDinero='''
             C-Mostrar el dinero en pesos Colombianos
@@ -16,82 +16,91 @@ preguntaConversionDinero='''
 :'''
 
 #MensajeError
-mensajeEntradaNoValidaNumero='Recuerde ingresar una entrada valida 1,2,3,4'
+mensajeEntradaNoValidaNumero='Recuerde ingresar una entrada valida 1,2,3,4,5'
 mensajeEntradaNoValidaLetra='Recuerde ingresar una entrada valida C,D,E'
 #MensajeInformativos
 mensajeOpcion='Usted escogio la opcion {}'
 mensajeSalida='Gracias por ingresar al programa'
-mensajeDolares='No es necesaria la conversión pero se muestra la lista'
+mensajePeso='No es necesaria la conversión pero se muestra la lista'
+mensajeAgregar='Agregue a la lista el valor que desee : '
+mensajeQuitar='retire el elemento que desee,ingresando 0 como primera posicion  : '
 mensajeMaximo='Su ingreso mas alto fue'
 mensajeMinimo='Su ingreso mas bajo fue'
 mensajePromedio='El promedio de los ingresos fue'
 
 
-
 #calculosPreliminares
-listaColombianos=[]
+listaColombiano=listaPesos
 listaEuros=[]
-listaDolar=listaDolares
+listaDolares=[]
 listaingresos=[]
 
-#---Pasando de dolares a pesos---#
-for elemento in listaDolar:
-    Colombianos=elemento * 3700
-    listaColombianos.append(Colombianos)
 
-#---Pasando de dolares a euros---#
-for elemento in listaDolar:
-    euros= elemento * 0.84
+#---Pasando de pesos a dolares---#
+for elemento in listaColombiano:
+    dolar=elemento * 0.00027
+    listaDolares.append(dolar)
+
+#---Pasando de pesos a euros---#
+for elemento in listaColombiano:
+    euros= elemento * 0.00023
     listaEuros.append(euros)
 
-#---diviendo ingresos mensuales---#
-for elemento in listaDolar:
-    ingreso=''
-    if(elemento < 1000):
-        print('Ingresos bajos')
-    elif(elemento >= 1000 and elemento < 7000):
-        print('Ingresos medios')
-    elif(elemento>= 7000 and elemento < 20000):
-        print('Ingresos altos')
-    else:
-        print('Ingresos elevados')
-    listaingresos.append(ingreso)
 
 #---Calculae maximo,minimo y promedio---#
-mayor=max(listaDolar)
-menor=min(listaDolar)
+mayor=max(listaColombiano)
+menor=min(listaColombiano)
 suma= 0
-for elemento in listaDolar:
+for elemento in listaColombiano:
     suma+= elemento
-promedio=suma/len(listaDolar)
+promedio=suma/len(listaColombiano)
 
-#MENU
+
+
 #InicioCodigo
 opcion=int(input(preguntaMenu))
 
-while(opcion != 4):
+while(opcion != 5):
     if(opcion ==1):
         print(mensajeOpcion.format(1))
         conversion=input(preguntaConversionDinero)
         if(conversion =='C'):
-            print(listaColombianos)
+            print(listaColombiano)
+            print(mensajePeso)
         elif(conversion == 'D'):
-            print(listaDolar)
+            print(listaDolares)
         elif(conversion == 'E'):
             print(listaEuros)
         else:
             print(mensajeEntradaNoValidaLetra)
     elif(opcion==2):
         print(mensajeOpcion.format(2))
-        print(listaingresos)
-    elif(opcion ==3):
+        agregar = float(input(mensajeAgregar))
+        listaColombiano.append(agregar)
+        print(listaColombiano)
+    elif(opcion==3):
         print(mensajeOpcion.format(3))
         print(mensajeMaximo,mayor)
         print(mensajeMinimo,menor)
         print(mensajePromedio,promedio)
+    elif(opcion==4):
+        print(mensajeOpcion.format(4))
+        print(listaColombiano)
+        quitar=int(input(mensajeQuitar))
+        listaColombiano.pop(quitar)
+        print(listaColombiano)
+
     else:
         print(mensajeEntradaNoValidaNumero)
 
     opcion=int(input(preguntaMenu))
 
 print(mensajeSalida)
+
+
+
+
+
+
+
+
