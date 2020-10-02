@@ -1,29 +1,21 @@
 #primera parte 
-print('punto1')
+
 def elevar2(valor) :
     return valor**2
-numeroElevado = elevar2 (4)
-print(numeroElevado)
 
-print('punto2')
+
 def elevar3(valor):
     return valor**3
-numeroelevado =elevar2 (3)
-print(numeroelevado)
 
-print('punto3')
+
 def elevar4(valor):
     return valor**4
-numeroelevado1 =elevar4 (2)
-print(numeroelevado1)
 
-print('punto4')
+
 def elevar5 (valor):
     return valor**5
-numeroelevado2 =elevar5(3)
-print(numeroelevado2)
 
-print('punto5')
+
 def calculadora (accion,valor):
     print(accion(valor))
 calculadora (elevar2,5)
