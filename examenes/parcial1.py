@@ -3,18 +3,14 @@
 def elevar2(valor) :
     return valor**2
 
-
 def elevar3(valor):
     return valor**3
-
 
 def elevar4(valor):
     return valor**4
 
-
 def elevar5 (valor):
     return valor**5
-
 
 def calculadora (accion,valor):
     print(accion(valor))
